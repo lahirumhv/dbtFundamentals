@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: dbtworkshop  
+    schema: jaffle_shop  
+    tables:
+      - name: orders
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+
+      - name: customers
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+              
+
+  - name: stripe
+    database: dbtworkshop
+    schema: stripe
+    tables:
+      - name: payment
